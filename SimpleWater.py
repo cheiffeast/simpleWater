@@ -46,7 +46,6 @@ def draw():
     for i in range(len(points)):
         if fill:
             pygame.draw.line(screen, [64, 164, 223], [i * (width / pointsNumber), width], [i * (width / pointsNumber), Offset + points[i][0]], int(width/pointsNumber))
-        #pygame.draw.circle(screen, [0, 0, 0], [int(i * (width / pointsNumber)), int(Offset + points[i][0])], 2, 1)
     pygame.draw.aalines(screen, [64, 164, 223], False, [[i * (width / pointsNumber), Offset + points[i][0]] for i in range(len(points))], 50)
 
     for event in pygame.event.get():
@@ -57,7 +56,8 @@ def draw():
     if m[0] == 1:
         mp = pygame.mouse.get_pos()
         point = int(mp[0]/(width/pointsNumber))
-        points[point][0] = - ClickPower
+        for i in range(-int(pointsNumber/50), int(pointsNumber/50), 1):
+            points[point + i][0] = - ClickPower + abs(i)
         
     
 
