@@ -5,7 +5,7 @@ SimpleWater.py is a water system that allows dynamics waves and interaction. Usi
 #Setup and customisation
 SimpleWater.py has a fully customisable system where you can change the spring constant between the points, baseline and damping on the resultant forces. You can change the power of the click on the water, offset and fill. Also you can change the number of points on the system and mass of the points.
 
-variable definitions:
+#Variable definitions:
   * fill - When set to true it will fill in the area under the wave curve
   * Offset - The distance down the surface the waters baseline is at
   * ClickPower - This is the distance the point will be moved when you click on it
@@ -15,6 +15,6 @@ variable definitions:
   * mass - The mass of each point
   * pointsNumber - The number of points in the system
 
-To run:
-  Simply install pygame
-  Run SimpleWater.py
+#To run:
+  1. Simply install pygame
+  2. Run SimpleWater.py
