@@ -7,12 +7,12 @@ SimpleWater.py has a fully customisable system where you can change the spring c
 
 variable definitions:
   *fill - When set to true it will fill in the area under the wave curve
-  *Offset - The distance down the surface the waters baseline is at
-  *ClickPower - This is the distance the point will be moved when you click on it
-  *PConstant - This is the spring constant between points
-  *BaselineConstant - This is the spring constant between the point and the baseline
-  *Damping - Used to make the water look more realistic
-  *mass - The mass of each point
+  Offset - The distance down the surface the waters baseline is at
+  ClickPower - This is the distance the point will be moved when you click on it
+  PConstant - This is the spring constant between points
+  BaselineConstant - This is the spring constant between the point and the baseline
+  Damping - Used to make the water look more realistic
+  mass - The mass of each point
   *pointsNumber - The number of points in the system
 
 To run:
