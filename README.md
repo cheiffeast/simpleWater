@@ -16,5 +16,5 @@ SimpleWater.py has a fully customisable system where you can change the spring c
   * pointsNumber - The number of points in the system
 
 #To run:
-  1. Simply install pygame
+  1. Install pygame
   2. Run SimpleWater.py
