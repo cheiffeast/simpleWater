@@ -1,6 +1,6 @@
 # SimpleWater.py
 SimpleWater.py is a water system that allows dynamics waves and interaction. Using hooke's law and a line of points joined by springs you can create a semi-realistic looking water system that can react to user input or if used correctly, can be used in a game and interact with object.
-
+![Alt Text](http://imgur.com/a/7sLtd)
 
 #Setup and customisation
 SimpleWater.py has a fully customisable system where you can change the spring constant between the points, baseline and damping on the resultant forces. You can change the power of the click on the water, offset and fill. Also you can change the number of points on the system and mass of the points.
