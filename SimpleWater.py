@@ -7,12 +7,12 @@ clock = pygame.time.Clock()
 Playing = True
 fill = False
 Offset = 400
-ClickPower = 30
-PConstant = 0.03
+ClickPower = 20
+PConstant = 0.05
 BaselineConstant = 0.01
-Damping = 0.935
-mass = 0.6
-pointsNumber = 250
+Damping = 0.92
+mass = 0.8
+pointsNumber = 100
 points = [[0, 0, mass] for i in range(pointsNumber)]
 def updatePoints():
     global points
@@ -43,10 +43,16 @@ def draw():
     screen.fill([255, 255, 255])
     
     updatePoints()
-    for i in range(len(points)):
+    for i in range(pointsNumber):
         if fill:
-            pygame.draw.line(screen, [64, 164, 223], [i * (width / pointsNumber), width], [i * (width / pointsNumber), Offset + points[i][0]], int(width/pointsNumber))
-    pygame.draw.aalines(screen, [64, 164, 223], False, [[i * (width / pointsNumber), Offset + points[i][0]] for i in range(len(points))], 50)
+            p1, p3, p4 = [i * (width / pointsNumber), Offset + points[i][0]], [(i + 1) * (width/pointsNumber), 500], [i * (width / pointsNumber), 500]
+            if i <= pointsNumber - 2:
+                p2 = [(i + 1) * (width / pointsNumber), Offset + points[i + 1][0]]
+            else:
+                p2 = [(i + 1) * (width / pointsNumber), Offset]
+            pygame.draw.polygon(screen, [64, 164, 223], [p1, p2, p3, p4])
+            
+    pygame.draw.aalines(screen, [64, 164, 223], False, [[i * (width / pointsNumber), Offset + points[i][0]] for i in range(len(points))])
 
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -57,7 +63,8 @@ def draw():
         mp = pygame.mouse.get_pos()
         point = int(mp[0]/(width/pointsNumber))
         for i in range(-int(pointsNumber/50), int(pointsNumber/50), 1):
-            points[point + i][0] = - ClickPower + abs(i)
+            if point + 1 <= pointsNumber - 2:
+                points[point + i][0] = - ClickPower + abs(i)
         
     
 
